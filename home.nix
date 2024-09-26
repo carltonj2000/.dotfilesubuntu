@@ -87,6 +87,8 @@
     };
   };
 
+  home.file.".config/Code/User/settings.json".source = ./settings.json;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
