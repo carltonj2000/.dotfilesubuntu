@@ -21,7 +21,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     pkgs.hello
-
+    pkgs.nixfmt-rfc-style
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -31,7 +31,7 @@
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
+    # (pkgs.write:wShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
@@ -70,14 +70,16 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
+  
   programs.zsh = {
     enable = true;
+    autocd = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
     };
+
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
@@ -85,9 +87,19 @@
         "vi-mode"
       ];
     };
+    initExtra = ''
+      # fnm
+      FNM_PATH="/home/carltonj2000/.local/share/fnm"
+      if [ -d "$FNM_PATH" ]; then
+        export PATH="$FNM_PATH:$PATH"
+        eval "`fnm env`"
+      fi
+      . "$HOME/.cargo/env"
+    '';
   };
 
   home.file.".config/Code/User/settings.json".source = ./settings.json;
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
