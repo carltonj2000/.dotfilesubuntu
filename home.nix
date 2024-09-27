@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    # ./modules/zsh.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "carltonj2000";
@@ -95,6 +98,7 @@
         eval "`fnm env`"
       fi
       . "$HOME/.cargo/env"
+      CARGO_TARGET_DIR="/home/carltonj2000/.cargo/bin"
     '';
   };
 
