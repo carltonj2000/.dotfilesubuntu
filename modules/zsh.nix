@@ -29,6 +29,7 @@
       export BUN_INSTALL="$HOME/.bun" 
       export PATH="$BUN_INSTALL/bin:$PATH" 
       export PATH=$PATH:/usr/local/go/bin
+      export PATH="$PATH:$HOME/go/bin"
     '';
   };
 }
