@@ -28,6 +28,7 @@
       CARGO_TARGET_DIR="/home/carltonj2000/.cargo/bin"
       export BUN_INSTALL="$HOME/.bun" 
       export PATH="$BUN_INSTALL/bin:$PATH" 
+      export PATH=$PATH:/usr/local/go/bin
     '';
   };
 }
