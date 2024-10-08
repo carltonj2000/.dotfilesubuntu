@@ -30,6 +30,7 @@
       export PATH="$BUN_INSTALL/bin:$PATH" 
       export PATH=$PATH:/usr/local/go/bin
       export PATH="$PATH:$HOME/go/bin"
+      export LIBVIRT_DEFAULT_URI="qemu:///system"
     '';
   };
 }
