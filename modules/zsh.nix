@@ -20,6 +20,7 @@
     initExtra = ''
       # fnm
       FNM_PATH="/home/carltonj2000/.local/share/fnm"
+      export LIBVIRT_DEFAULT_URI="qemu:///system"
       if [ -d "$FNM_PATH" ]; then
         export PATH="$FNM_PATH:$PATH"
         eval "`fnm env`"
@@ -30,7 +31,7 @@
       export PATH="$BUN_INSTALL/bin:$PATH" 
       export PATH=$PATH:/usr/local/go/bin
       export PATH="$PATH:$HOME/go/bin"
-      export LIBVIRT_DEFAULT_URI="qemu:///system"
+      export PATH="$PATH:$HOME/.deno/bin"
     '';
   };
 }
