@@ -32,6 +32,8 @@
       export PATH=$PATH:/usr/local/go/bin
       export PATH="$PATH:$HOME/go/bin"
       export PATH="$PATH:$HOME/.deno/bin"
+      export FLYCTL_INSTALL="$HOME/.fly"
+      export PATH="$FLYCTL_INSTALL/bin:$PATH"
     '';
   };
 }
