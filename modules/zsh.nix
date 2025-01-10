@@ -34,6 +34,7 @@
       export PATH="$PATH:$HOME/.deno/bin"
       export FLYCTL_INSTALL="$HOME/.fly"
       export PATH="$FLYCTL_INSTALL/bin:$PATH"
+      export PATH="$PATH:$HOME/.modular/bin"
     '';
   };
 }
